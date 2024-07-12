@@ -4,7 +4,10 @@
     ViewBag.Title = "title";
     Layout = "_Layout";
 }
-
+@section Scripts
+{
+    @await Html.PartialAsync("_ValidationScriptsPartial");
+}
 <div class="container offset-md-2">
     <h2>Login form</h2>
     @if (TempData["SuccessMessage"] != null)

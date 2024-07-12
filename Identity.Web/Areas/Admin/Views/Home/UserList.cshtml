@@ -5,4 +5,27 @@
     Layout = "_Layout";
 }
 
-<h2>title</h2>
+<h2>Список пользователей</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Имя пользователя</th>
+        <th scope="col">Email</th>
+        <th scope="col">Город</th>
+        <th scope="col">Телефон</th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th scope="row">@item.Id</th>
+            <td>@item.UserName</td>
+            <td>@item.Email</td>
+            <td>@item.City</td>
+            <td>@item.Phone</td>
+        </tr>
+    }
+    </tbody>
+</table>
