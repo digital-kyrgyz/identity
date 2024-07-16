@@ -1,4 +1,5 @@
 ﻿using Identity.Web.Models;
+using Identity.Web.Validations;
 
 namespace Identity.Web.Extensions;
 
@@ -15,6 +16,6 @@ public static class DependencyExtensions
             options.Password.RequireLowercase = true;
             options.Password.RequireUppercase = true;
             options.Password.RequireDigit = false;
-        }).AddEntityFrameworkStores<AppDbContext>();
+        }).AddPasswordValidator<PasswordValidator>().AddUserValidator<UserValidator>().AddEntityFrameworkStores<AppDbContext>();
     }
 }
